@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "da152a36026a4cc236dadafd6bbcbc27",
+    "content-hash": "c60d4dc52aef0d6bd04b7536841bcf28",
     "packages": [
         {
             "name": "brick/math",
@@ -6000,6 +6000,69 @@
                 }
             ],
             "time": "2022-05-07T16:58:13+00:00"
+        },
+        {
+            "name": "yaroslawww/laravel-force-https",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yaroslawww/laravel-force-https.git",
+                "reference": "307defb126dbc5f53e8a468e255512424adce62d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yaroslawww/laravel-force-https/zipball/307defb126dbc5f53e8a468e255512424adce62d",
+                "reference": "307defb126dbc5f53e8a468e255512424adce62d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^8.0|^9.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.1",
+                "orchestra/testbench": "^6.21",
+                "phpunit/phpunit": "^9.5",
+                "vimeo/psalm": "^4.10"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ForceHttps\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ForceHttps\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yaroslav Georgitsa",
+                    "email": "yaroslav.georgitsa@gmail.com",
+                    "homepage": "https://yaroslawww.github.io",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Easy redirect to https for Laravel.",
+            "homepage": "https://github.com/yaroslawww/laravel-force-https",
+            "keywords": [
+                "https",
+                "laravel",
+                "redirect",
+                "ssl"
+            ],
+            "support": {
+                "issues": "https://github.com/yaroslawww/laravel-force-https/issues",
+                "source": "https://github.com/yaroslawww/laravel-force-https/tree/3.0.0"
+            },
+            "time": "2021-09-27T14:20:18+00:00"
         }
     ],
     "packages-dev": [
