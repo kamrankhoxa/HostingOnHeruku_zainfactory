@@ -10,6 +10,21 @@
     <form action="{{ route('income-u') }}" method="POST">
         @csrf
     <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="buyers_id">Buyers</label>
+        <select  name= 'buyers_id' class="form-control" required>
+        @foreach($buyers as $item)
+        <option value="{{$item->id}}" @if($item->id == $income->buyers_id) {{"selected"}} @endif>{{$item->name}}</option>
+        @endforeach
+        </select>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="Date">Date</label>
+        <input type="date" class="form-control" name='date' value="{{$income->created_at->format('Y-m-d')}}" required>
+      </div>
+
+
       <div class="form-group col-md-6">
         <label for="title">Title</label>
         <input type="hidden" class="form-control" name='id' value="{{$income->id}}" required>
@@ -31,14 +46,7 @@
         <label for="title">Submit</label>
         <input type="number" class="form-control" name='submit' value="{{$income->submit}}" required>
       </div>
-        <div class="form-group col-md-4">
-          <label for="buyers_id">Buyers</label>
-          <select  name= 'buyers_id' class="form-control" required>
-          @foreach($buyers as $item)
-          <option value="{{$item->id}}" @if($item->id == $income->buyers_id) {{"selected"}} @endif>{{$item->name}}</option>
-          @endforeach
-          </select>
-        </div>
+       
         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}

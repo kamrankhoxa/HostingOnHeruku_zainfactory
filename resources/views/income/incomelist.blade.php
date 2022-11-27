@@ -19,12 +19,13 @@
                         <thead>
                             
                             <tr>
+                                <th>Buyers</th>
                                 <th>Title</th>
                                 <th>Description No</th>
                                 <th>Quantity</th>
                                 <th>Amount</th>
                                 <th>Submit</th>
-                                <th>Buyers</th>
+                                
                                 <th>User</th>
                                 <th>Created at</th>
                                 <th>Updated at</th>
@@ -35,14 +36,15 @@
                         <tbody>
                             @foreach ($income as $item)
                              <tr>
+                                @php $buyers = \App\Models\Buyers::where(['id' => $item['buyers_id']])->first() @endphp
+                                <td><a href="{{route('buyers-e',$item['buyers_id'])}}">{{$buyers->name}}</a></td>
+                                @php $value = \App\Models\User::where(['id' => $item['user_id']])->first() @endphp
+
                                 <td><?php echo $item['title']; ?></td>
                                 <td><?php echo $item['description']; ?></td>
                                 <td><?php echo $item['quantity']; ?></td>
                                 <td><?php echo $item['amount']; ?></td>
                                 <td><?php echo $item['submit']; ?></td>
-                                @php $buyers = \App\Models\Buyers::where(['id' => $item['buyers_id']])->first() @endphp
-                                <td><a href="{{route('buyers-e',$item['buyers_id'])}}">{{$buyers->name}}</a></td>
-                                @php $value = \App\Models\User::where(['id' => $item['user_id']])->first() @endphp
                                 <td>{{$value->name}}</td>
                                 <td><?php echo $item['created_at']->format('d-M-Y'); ?></td>
                                 <td><?php echo $item['updated_at']->format('d-M-Y'); ?></td>
@@ -52,12 +54,13 @@
                             </tbody>
                         <tfoot>
                             <tr>
+                                <th>Buyers</th>
                                 <th>Title</th>
-                                <th>Description No</th>
+                                <th>Description</th>
                                 <th>Quantity</th>
                                 <th>Amount</th>
                                 <th>Submit</th>
-                                <th>Buyers</th>
+                                
                                 <th>User</th>
                                 <th>Created at</th>
                                 <th>Updated at</th>

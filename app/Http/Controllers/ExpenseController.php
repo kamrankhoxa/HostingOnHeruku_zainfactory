@@ -50,6 +50,8 @@ class ExpenseController extends Controller
         $query->submit = $request->submit;
         $query->supplier_id = $request->supplier_id;
         $query->user_id = Auth::user()->id;
+        $created_at = date('Y-m-d H:i:s',strtotime($request->date));
+        $query->created_at = $created_at;
         $query->save();
         return redirect()->route('expense');
     }
@@ -107,6 +109,8 @@ class ExpenseController extends Controller
         $query->submit = $request->submit;
         $query->supplier_id = $request->supplier_id;
         $query->user_id = Auth::user()->id;
+        $created_at = date('Y-m-d H:i:s',strtotime($request->date));
+        $query->created_at = $created_at;
         $query->save();
         return redirect()->route('expense-e', $request->id);
     }

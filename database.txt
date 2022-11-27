@@ -1,4 +1,13 @@
-db5010960216.hosting-data.io
-dbs9265485
-dbu2116435
-Admin%526726
+You have successfully created a new database. The details are below.
+
+Username: 1rHr1WaafJ
+
+Database name: 1rHr1WaafJ
+
+Password: H6llKmuYaw
+
+Server: remotemysql.com
+
+Port: 3306
+
+These are the username and password to log in to your database and phpMyAdmin

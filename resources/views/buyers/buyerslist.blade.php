@@ -21,6 +21,7 @@
                             <tr>
                                 <th>Shop Name</th>
                                 <th>Name</th>
+                                <th>Balance</th>
                                 <th>Phone No</th>
                                 <th>Address</th>
                                 <th>Address1</th>
@@ -37,6 +38,19 @@
                              <tr>
                                 <td><?php echo $item['shop_name']; ?></td>
                                 <td><?php echo $item['name']; ?></td>
+                                @php $buyers = \App\Models\Income::where(['buyers_id' => $item['id']])->get(); 
+                                $buyers_balance=0;
+                                foreach($buyers as $rows)
+                                {
+                                    if($rows->submit < $rows->amount)
+                                    {
+                                        $temp = $rows->amount - $rows->submit;
+                                        $buyers_balance += $temp;
+                                    }
+                                }
+                                @endphp
+                                <td>{{$buyers_balance}}</td>
+                               
                                 <td><?php echo $item['phno']; ?></td>
                                 <td><?php echo $item['address']; ?></td>
                                 <td><?php echo $item['address1']; ?></td>
@@ -52,6 +66,7 @@
                             <tr>
                                 <th>Shop Name</th>
                                 <th>Name</th>
+                                <th>Balance</th>
                                 <th>Phone No</th>
                                 <th>Address</th>
                                 <th>Address1</th>

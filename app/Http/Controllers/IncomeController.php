@@ -54,6 +54,9 @@ class IncomeController extends Controller
         $query->submit = $request->submit;
         $query->buyers_id = $request->buyers_id;
         $query->user_id = Auth::user()->id;
+
+        $created_at = date('Y-m-d H:i:s',strtotime($request->date));
+        $query->created_at = $created_at;
         $query->save();
         return redirect()->route('income');
     }
@@ -111,6 +114,8 @@ class IncomeController extends Controller
         $query->submit = $request->submit;
         $query->buyers_id = $request->buyers_id;
         $query->user_id = Auth::user()->id;
+        $created_at = date('Y-m-d H:i:s',strtotime($request->date));
+        $query->created_at = $created_at;
         $query->save();
         return redirect()->route('income-e', $request->id);
     }
